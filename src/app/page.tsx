@@ -52,12 +52,12 @@ export default function Home() {
     if (!room) return alert("ไม่พบห้องเรียน");
 
     // Check if logging in as Admin or Member
-    if (password === room.adminPin) {
+    if (password === String(room.adminPin)) {
       localStorage.setItem('roomId', room.roomId);
       localStorage.setItem('roomName', room.roomName);
       localStorage.setItem('userRole', 'admin');
       router.push('/homework');
-    } else if (password === room.joinPassword) {
+    } else if (password === String(room.joinPassword)) {
       localStorage.setItem('roomId', room.roomId);
       localStorage.setItem('roomName', room.roomName);
       localStorage.setItem('userRole', 'member');
