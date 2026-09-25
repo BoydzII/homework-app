@@ -48,22 +48,26 @@ export default function Home() {
     if (!selectedRoom) return alert("กรุณาเลือกห้องเรียน");
     if (!password) return alert("กรุณากรอกรหัสผ่าน");
 
-    const room = rooms.find(r => r.roomId === selectedRoom);
+    const room = rooms.find(r => String(r.roomId) === String(selectedRoom));
     if (!room) return alert("ไม่พบห้องเรียน");
 
+    const p = String(password).trim();
+    const admin = String(room.adminPin || "").trim();
+    const join = String(room.joinPassword || "").trim();
+
     // Check if logging in as Admin or Member
-    if (password === String(room.adminPin)) {
+    if (p === admin && admin !== "") {
       localStorage.setItem('roomId', room.roomId);
       localStorage.setItem('roomName', room.roomName);
       localStorage.setItem('userRole', 'admin');
       router.push('/homework');
-    } else if (password === String(room.joinPassword)) {
+    } else if (p === join && join !== "") {
       localStorage.setItem('roomId', room.roomId);
       localStorage.setItem('roomName', room.roomName);
       localStorage.setItem('userRole', 'member');
       router.push('/homework');
     } else {
-      alert("รหัสผ่านไม่ถูกต้อง");
+      alert(`รหัสผ่านไม่ถูกต้อง (ถ้าคิดว่าถูก ให้ลองรีเฟรชหน้าเว็บ 1 ครั้งครับ)`);
     }
   };
 

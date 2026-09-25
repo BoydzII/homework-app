@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { NextResponse } from 'next/server';
 
 const GAS_URL = 'https://script.google.com/macros/s/AKfycbzjCDuMKqfxk7Te3H1T45LYMUpqe6HXq2kwoOxCR596-n4w017vwfOwhPaxou0jMSEi/exec';
