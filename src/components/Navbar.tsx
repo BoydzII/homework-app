@@ -8,7 +8,7 @@ export default function Navbar() {
       <div className="max-w-4xl mx-auto flex justify-between items-center">
         <Link href="/" className="font-bold text-lg flex items-center gap-2">
           <BookOpen size={24} />
-          <span>ระบบสั่งการบ้าน</span>
+          <span>แจ้งเตือนเรื่องการบ้าน</span>
         </Link>
         <div className="flex gap-4">
           <Link href="/homework" className="flex items-center gap-1 hover:text-indigo-200">

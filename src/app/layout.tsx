@@ -10,7 +10,7 @@ const sarabun = Sarabun({
 });
 
 export const metadata: Metadata = {
-  title: "Internship Report System",
+  title: "แจ้งเตือนเรื่องการบ้าน",
   description: "Offline-first application for daily internship reporting.",
   manifest: "/manifest.json",
   other: {
